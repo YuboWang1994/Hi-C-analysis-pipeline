@@ -27,6 +27,21 @@ samtools: https://github.com/samtools/samtools
 
 7 python3环境，通过以下指令安装流程需要依赖的模块
 mkdir -p {PYTHON3_PATH} && cd {PYTHON3_PATH}
+pip3 install fire --target=$PWD
+pip3 install h5py --target=$PWD
+pip3 install pandas --target=$PWD
+pip3 install pandarallel --target=$PWD
+pip3 install Cython==0.29.37 --target=$PWD
+pip3 install pysam --target=$PWD
+pip3 install biopython --target=$PWD
+pip3 install joblib --target=$PWD
+pip3 install bx-python --target=$PWD
+
+
+git clone https://github.com/mirnylab/mirnylib-legacy
+
+
+git clone https://github.com/mirnylab/hiclib-legacy && cd hiclib-legacy
 
 
 
