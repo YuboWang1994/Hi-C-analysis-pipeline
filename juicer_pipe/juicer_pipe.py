@@ -10,7 +10,6 @@ fragment = '{juicer_pipe}/fragment.pl'
 dups = '{juicer_pipe}/dups.awk'
 samtools ='{samtools_path}'
 perl = '{perl_path}'
-pigz = '{pigz_path}'
 
 def main(fq1,fq2,sample,index,enzyme_txt,out,threads=10,cpus=2):
     start = time.time()
@@ -56,7 +55,7 @@ def juicer_merge_dedup(fraglist,sample,out):
     os.system(f'LC_ALL=C awk -f {dups} -v name={out}/{sample}_ {out}/{sample}_sort.txt')
 
 def sub_fq(fq1,fq2,split_num,out,thread):
-    #os.system(f'{seqkit} split2  -p {split_num} -1 {fq1} -2 {fq2}  -j {thread} -w 150 -O {out} -f ')
+    os.system(f'{seqkit} split2 -p {split_num} -1 {fq1} -2 {fq2}  -j {thread} -w 150 -O {out} -f ')
     prefix1 = os.path.basename(fq1).split('.')[0]
     prefix2 = os.path.basename(fq2).split('.')[0]
     tail = os.path.basename(fq1).split('.')[1]+'.'+os.path.basename(fq1).split('.')[2]
