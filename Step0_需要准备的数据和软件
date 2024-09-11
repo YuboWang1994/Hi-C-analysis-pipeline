@@ -1,0 +1,34 @@
+1 基因组序列文件{genome}，fasta格式
+
+
+2 基因组注释文件{gtf}，gtf格式，gff3文件需要自行写脚本修改
+# gtf格式如下所示，每个基因的信息包括gene，transcript，exon；其他信息如utr，cds可以不要；每个基因只保留最长转录本
+chr10	GETA	gene	28695416	28697106	.	-	.	gene_id "Ior1_00006"; gene_name "Ior1_00006";
+chr10	GETA	transcript	28695416	28697106	.	-	.	gene_id "Ior1_00006"; gene_name "Ior1_00006"; transcript_id "Ior1_00006.t1"; transcript_name "Ior1_00006.t1";
+chr10	GETA	exon	28697062	28697106	.	-	.	gene_id "Ior1_00006"; gene_name "Ior1_00006"; transcript_id "Ior1_00006.t1"; transcript_name "Ior1_00006.t1";
+chr10	GETA	exon	28696381	28696832	.	-	.	gene_id "Ior1_00006"; gene_name "Ior1_00006"; transcript_id "Ior1_00006.t1"; transcript_name "Ior1_00006.t1";
+chr10	GETA	exon	28696296	28696315	.	-	.	gene_id "Ior1_00006"; gene_name "Ior1_00006"; transcript_id "Ior1_00006.t1"; transcript_name "Ior1_00006.t1";
+chr10	GETA	exon	28695416	28695597	.	-	.	gene_id "Ior1_00006"; gene_name "Ior1_00006"; transcript_id "Ior1_00006.t1"; transcript_name "Ior1_00006.t1";
+
+
+3 Hi-C原始数据，每个数据有R1和R2两个文件，fastq格式，不同生物学重复的数据不要合并
+
+
+4 Hi-C文库构建的酶{enzyme}，可能是HindIII，DpnII，MboI
+
+
+5 HIC_PIPE流程，百度网盘链接：https://pan.baidu.com/s/10BxcQ9zKjpzydgPs_zRZSg，密码：r33l，下载后上传服务器并解压
+
+
+6 需要手动安装的软件：
+bwa-mem2: https://github.com/bwa-mem2/bwa-mem2
+samtools: https://github.com/samtools/samtools
+
+
+7 python3环境，通过以下指令安装流程需要依赖的模块
+mkdir -p {PYTHON3_PATH} && cd {PYTHON3_PATH}
+
+
+
+# python2环境，通过以下指令安装流程需要依赖的模块
+mkdir -p {PYTHON2_PATH} && cd {PYTHON2_PATH}
